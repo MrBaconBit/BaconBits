@@ -1,0 +1,9 @@
+Building BaconBits
+
+See doc/readme-qt.rst for instructions on building baconbits-qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of BaconBits.
+
+See doc/build-*.txt for instructions on building baconbits,
+the intended-for-services, no-graphical-interface, reference
+implementation of BaconBits.
