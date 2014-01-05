@@ -36,7 +36,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x5e039e1ca1dbf128973bf6cff98169e40a1b194c3b91463ab74956f413b2f9c8");
+uint256 hashGenesisBlock("0xf8b5673141d3036c973291ea0435fcfac9f278a1453a82ff1b855d62d06");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // baconbits: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2036,11 +2036,11 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1362279783;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 0;
+        block.nNonce   = 427573;
 
         if (fTestNet)
         {
-            block.nTime    = 1362279783;             //test net not supported
+            block.nTime    = 0;             //test net not supported
             block.nNonce   = 0;
         }
 
@@ -2052,7 +2052,7 @@ bool LoadBlockIndex(bool fAllowNew)
 		assert(block.hashMerkleRoot == uint256("0x9ef3c17270443847ad5b35f781a18cdb1f2518c69c5b0c950431a39fc3c6af66"));
 
         // If genesis block hash does not match, then generate new genesis hash.
-        if (true && block.GetHash() != hashGenesisBlock)
+        if (false && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
