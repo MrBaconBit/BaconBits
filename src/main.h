@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2011-2012 Litecoin Developers
+// Copyright (c) 2011-2013 digitalcoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef BITCOIN_MAIN_H
@@ -26,23 +26,15 @@ class CInv;
 class CRequestTracker;
 class CNode;
 
-// This fix should give some protection agains sudden
-// changes of the network hashrate.
-// Thanks: https://bitcointalk.org/index.php?topic=182430.msg1904506#msg1904506
-// activated: after block 15000 for all following diff retargeting events
-#define COINFIX1_BLOCK  (15000)
-
-// for now, we leave the block size at 1 MB, meaning we support roughly 2400 transactions
-// per block, which means about 160 tps
 static const unsigned int MAX_BLOCK_SIZE = 1000000;
 static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2;
 static const unsigned int MAX_BLOCK_SIGOPS = MAX_BLOCK_SIZE/50;
 static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100;
 static const int64 MIN_TX_FEE = 10000000;
 static const int64 MIN_RELAY_TX_FEE = MIN_TX_FEE;
-static const int64 MAX_MONEY = 30000000 * COIN; // maximum number of coins
+static const int64 MAX_MONEY = 200000000 * COIN; // 
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
-static const int COINBASE_MATURITY = 30;
+static const int COINBASE_MATURITY = 5;
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 #ifdef USE_UPNP
@@ -547,7 +539,7 @@ public:
     {
         // Large (in bytes) low-priority (new, small-coin) transactions
         // need a fee.
-        return dPriority > COIN * 300 / 250; // 300 blocks found a day. Priority cutoff is 1 YUM day / 250 bytes.
+        return dPriority > COIN * 480 / 250; // digitalcoin: 480 blocks found a day. Priority cutoff is 1 digitalcoin day / 250 bytes.
     }
 
     int64 GetMinFee(unsigned int nBlockSize=1, bool fAllowFree=true, enum GetMinFee_mode mode=GMF_BLOCK) const
@@ -1002,8 +994,7 @@ public:
         }
 
         // Check the header
-        if (!CheckProofOfWork(GetPoWHash(), nBits))
-            return error("CBlock::ReadFromDisk() : errors in block header");
+        // if (!CheckProofOfWork(GetPoWHash(), nBits)) return error("CBlock::ReadFromDisk() : errors in block header");
 
         return true;
     }
@@ -1593,7 +1584,7 @@ public:
     bool CheckSignature()
     {
         CKey key;
-        if (!key.SetPubKey(ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9")))
+        if (!key.SetPubKey(ParseHex("04A9CFD81AF5D53310BE45E6326E706A542B1028DF85D2819D5DE496D8816C83129CE874FE5E3A23B03544BFF35458833779DAB7A6FF687525A4E23CA59F1E2B94")))
             return error("CAlert::CheckSignature() : SetPubKey failed");
         if (!key.Verify(Hash(vchMsg.begin(), vchMsg.end()), vchSig))
             return error("CAlert::CheckSignature() : verify signature failed");

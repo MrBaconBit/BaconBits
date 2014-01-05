@@ -1,4 +1,4 @@
-Litecoin-Qt: Qt4 GUI for Litecoin
+digitalcoin: Qt4 GUI for digitalcoin
 ================================
 
 Build instructions
@@ -20,7 +20,7 @@ then execute the following:
 
 ::
 
-    qmake
+    qmake-qt4
     make
 
 Alternatively, install `Qt Creator`_ and open the `litecoin-qt.pro` file.
