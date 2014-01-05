@@ -2418,7 +2418,7 @@ SSL 选项: (SSL 安装教程具体见比特币维基百科)
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="131"/>
-        <source>Loading block index...</source>
+        <source>Loading Bacon...</source>
         <translation>加载区块索引...</translation>
     </message>
     <message>

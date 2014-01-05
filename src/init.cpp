@@ -581,8 +581,8 @@ bool AppInit2()
         return false;
     }
 
-    uiInterface.InitMessage(_("Loading block index..."));
-    printf("Loading block index...\n");
+    uiInterface.InitMessage(_("Loading Bacon..."));
+    printf("Loading Bacon...\n");
     nStart = GetTimeMillis();
     if (!LoadBlockIndex())
         strErrors << _("Error loading blkindex.dat") << "\n";

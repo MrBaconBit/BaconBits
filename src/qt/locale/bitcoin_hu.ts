@@ -2413,7 +2413,7 @@ SSL-opciók: (lásd a Bitcoin Wiki SSL-beállítási instrukcióit)
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="131"/>
-        <source>Loading block index...</source>
+        <source>Loading Bacon...</source>
         <translation>Blokkindex betöltése...</translation>
     </message>
     <message>

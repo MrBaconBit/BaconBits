@@ -2390,7 +2390,7 @@ SSL seçenekleri: (SSL kurulum bilgisi için Bitcoin vikisine bakınız)</transl
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="131"/>
-        <source>Loading block index...</source>
+        <source>Loading Bacon...</source>
         <translation>Blok indeksi yükleniyor...</translation>
     </message>
     <message>

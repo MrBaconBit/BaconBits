@@ -2411,7 +2411,7 @@ SSL 選項: (SSL 設定程序請見 Bitcoin Wiki)
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="131"/>
-        <source>Loading block index...</source>
+        <source>Loading Bacon...</source>
         <translation>載入區塊索引中...</translation>
     </message>
     <message>

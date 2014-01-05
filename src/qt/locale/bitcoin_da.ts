@@ -2411,7 +2411,7 @@ SSL-indstillinger: (se Bitcoin Wiki for SSL opsætningsinstruktioner)</translati
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="131"/>
-        <source>Loading block index...</source>
+        <source>Loading Bacon...</source>
         <translation>Indlæser blok-indeks...</translation>
     </message>
     <message>

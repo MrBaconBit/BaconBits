@@ -2419,7 +2419,7 @@ Opzioni SSL: (vedi il wiki di Bitcoin per le istruzioni di configurazione SSL)
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="131"/>
-        <source>Loading block index...</source>
+        <source>Loading Bacon...</source>
         <translation>Caricamento dell&apos;indice del blocco...</translation>
     </message>
     <message>

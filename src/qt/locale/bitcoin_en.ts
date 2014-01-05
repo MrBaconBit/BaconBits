@@ -2002,7 +2002,7 @@ SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Loading block index...</source>
+        <source>Loading Bacon...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

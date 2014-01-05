@@ -2416,8 +2416,8 @@ SSL options: (see the Bitcoin Wiki for SSL setup instructions)
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="131"/>
-        <source>Loading block index...</source>
-        <translation>Loading block index...</translation>
+        <source>Loading Bacon...</source>
+        <translation>Loading Bacon...</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="65"/>
