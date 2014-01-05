@@ -466,7 +466,7 @@ vector<unsigned char> ParseHex(const string& str)
 
 static void InterpretNegativeSetting(string name, map<string, string>& mapSettingsRet)
 {
-    // interpret -noBAR as -BCB=0 (and -noBAR=0 as -BCB=1) as long as -BCB not set
+    // interpret -noBAR as -YUM=0 (and -noBAR=0 as -YUM=1) as long as -YUM not set
     if (name.find("-no") == 0)
     {
         std::string positive("-");
@@ -510,7 +510,7 @@ void ParseParameters(int argc, const char* const argv[])
     {
         string name = entry.first;
 
-        //  interpret --BCB as -BCB (as long as both are not set)
+        //  interpret --YUM as -YUM (as long as both are not set)
         if (name.find("--") == 0)
         {
             std::string singleDash(name.begin()+1, name.end());
@@ -519,7 +519,7 @@ void ParseParameters(int argc, const char* const argv[])
             name = singleDash;
         }
 
-        // interpret -noBAR as -BCB=0 (and -noBAR=0 as -BCB=1) as long as -BCB not set
+        // interpret -noBAR as -YUM=0 (and -noBAR=0 as -YUM=1) as long as -YUM not set
         InterpretNegativeSetting(name, mapArgs);
     }
 }
@@ -1057,7 +1057,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
         if (mapSettingsRet.count(strKey) == 0)
         {
             mapSettingsRet[strKey] = it->value[0];
-            // interpret noBAR=1 as BCB=0 (and noBAR=0 as BCB=1) as long as BCB not set)
+            // interpret noBAR=1 as YUM=0 (and noBAR=0 as YUM=1) as long as YUM not set)
             InterpretNegativeSetting(strKey, mapSettingsRet);
         }
         mapMultiSettingsRet[strKey].push_back(it->value[0]);

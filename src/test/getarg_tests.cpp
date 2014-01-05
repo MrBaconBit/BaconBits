@@ -25,10 +25,10 @@ ResetArgs(const std::string& strArg)
 
 BOOST_AUTO_TEST_CASE(boolarg)
 {
-    ResetArgs("-BCB");
-    BOOST_CHECK(GetBoolArg("-BCB"));
-    BOOST_CHECK(GetBoolArg("-BCB", false));
-    BOOST_CHECK(GetBoolArg("-BCB", true));
+    ResetArgs("-YUM");
+    BOOST_CHECK(GetBoolArg("-YUM"));
+    BOOST_CHECK(GetBoolArg("-YUM", false));
+    BOOST_CHECK(GetBoolArg("-YUM", true));
 
     BOOST_CHECK(!GetBoolArg("-fo"));
     BOOST_CHECK(!GetBoolArg("-fo", false));
@@ -38,130 +38,130 @@ BOOST_AUTO_TEST_CASE(boolarg)
     BOOST_CHECK(!GetBoolArg("-BARo", false));
     BOOST_CHECK(GetBoolArg("-BARo", true));
 
-    ResetArgs("-BCB=0");
-    BOOST_CHECK(!GetBoolArg("-BCB"));
-    BOOST_CHECK(!GetBoolArg("-BCB", false));
-    BOOST_CHECK(!GetBoolArg("-BCB", true));
+    ResetArgs("-YUM=0");
+    BOOST_CHECK(!GetBoolArg("-YUM"));
+    BOOST_CHECK(!GetBoolArg("-YUM", false));
+    BOOST_CHECK(!GetBoolArg("-YUM", true));
 
-    ResetArgs("-BCB=1");
-    BOOST_CHECK(GetBoolArg("-BCB"));
-    BOOST_CHECK(GetBoolArg("-BCB", false));
-    BOOST_CHECK(GetBoolArg("-BCB", true));
+    ResetArgs("-YUM=1");
+    BOOST_CHECK(GetBoolArg("-YUM"));
+    BOOST_CHECK(GetBoolArg("-YUM", false));
+    BOOST_CHECK(GetBoolArg("-YUM", true));
 
     // New 0.6 feature: auto-map -nosomething to !-something:
     ResetArgs("-noBAR");
-    BOOST_CHECK(!GetBoolArg("-BCB"));
-    BOOST_CHECK(!GetBoolArg("-BCB", false));
-    BOOST_CHECK(!GetBoolArg("-BCB", true));
+    BOOST_CHECK(!GetBoolArg("-YUM"));
+    BOOST_CHECK(!GetBoolArg("-YUM", false));
+    BOOST_CHECK(!GetBoolArg("-YUM", true));
 
     ResetArgs("-noBAR=1");
-    BOOST_CHECK(!GetBoolArg("-BCB"));
-    BOOST_CHECK(!GetBoolArg("-BCB", false));
-    BOOST_CHECK(!GetBoolArg("-BCB", true));
+    BOOST_CHECK(!GetBoolArg("-YUM"));
+    BOOST_CHECK(!GetBoolArg("-YUM", false));
+    BOOST_CHECK(!GetBoolArg("-YUM", true));
 
-    ResetArgs("-BCB -noBAR");  // -BCB should win
-    BOOST_CHECK(GetBoolArg("-BCB"));
-    BOOST_CHECK(GetBoolArg("-BCB", false));
-    BOOST_CHECK(GetBoolArg("-BCB", true));
+    ResetArgs("-YUM -noBAR");  // -YUM should win
+    BOOST_CHECK(GetBoolArg("-YUM"));
+    BOOST_CHECK(GetBoolArg("-YUM", false));
+    BOOST_CHECK(GetBoolArg("-YUM", true));
 
-    ResetArgs("-BCB=1 -noBAR=1");  // -BCB should win
-    BOOST_CHECK(GetBoolArg("-BCB"));
-    BOOST_CHECK(GetBoolArg("-BCB", false));
-    BOOST_CHECK(GetBoolArg("-BCB", true));
+    ResetArgs("-YUM=1 -noBAR=1");  // -YUM should win
+    BOOST_CHECK(GetBoolArg("-YUM"));
+    BOOST_CHECK(GetBoolArg("-YUM", false));
+    BOOST_CHECK(GetBoolArg("-YUM", true));
 
-    ResetArgs("-BCB=0 -noBAR=0");  // -BCB should win
-    BOOST_CHECK(!GetBoolArg("-BCB"));
-    BOOST_CHECK(!GetBoolArg("-BCB", false));
-    BOOST_CHECK(!GetBoolArg("-BCB", true));
+    ResetArgs("-YUM=0 -noBAR=0");  // -YUM should win
+    BOOST_CHECK(!GetBoolArg("-YUM"));
+    BOOST_CHECK(!GetBoolArg("-YUM", false));
+    BOOST_CHECK(!GetBoolArg("-YUM", true));
 
     // New 0.6 feature: treat -- same as -:
-    ResetArgs("--BCB=1");
-    BOOST_CHECK(GetBoolArg("-BCB"));
-    BOOST_CHECK(GetBoolArg("-BCB", false));
-    BOOST_CHECK(GetBoolArg("-BCB", true));
+    ResetArgs("--YUM=1");
+    BOOST_CHECK(GetBoolArg("-YUM"));
+    BOOST_CHECK(GetBoolArg("-YUM", false));
+    BOOST_CHECK(GetBoolArg("-YUM", true));
 
     ResetArgs("--noBAR=1");
-    BOOST_CHECK(!GetBoolArg("-BCB"));
-    BOOST_CHECK(!GetBoolArg("-BCB", false));
-    BOOST_CHECK(!GetBoolArg("-BCB", true));
+    BOOST_CHECK(!GetBoolArg("-YUM"));
+    BOOST_CHECK(!GetBoolArg("-YUM", false));
+    BOOST_CHECK(!GetBoolArg("-YUM", true));
 
 }
 
 BOOST_AUTO_TEST_CASE(stringarg)
 {
     ResetArgs("");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", ""), "");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", "eleven"), "eleven");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", ""), "");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", "eleven"), "eleven");
 
-    ResetArgs("-BCB -bar");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", ""), "");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", "eleven"), "");
+    ResetArgs("-YUM -bar");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", ""), "");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", "eleven"), "");
 
-    ResetArgs("-BCB=");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", ""), "");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", "eleven"), "");
+    ResetArgs("-YUM=");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", ""), "");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", "eleven"), "");
 
-    ResetArgs("-BCB=11");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", ""), "11");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", "eleven"), "11");
+    ResetArgs("-YUM=11");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", ""), "11");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", "eleven"), "11");
 
-    ResetArgs("-BCB=eleven");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", ""), "eleven");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", "eleven"), "eleven");
+    ResetArgs("-YUM=eleven");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", ""), "eleven");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", "eleven"), "eleven");
 
 }
 
 BOOST_AUTO_TEST_CASE(intarg)
 {
     ResetArgs("");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", 11), 11);
-    BOOST_CHECK_EQUAL(GetArg("-BCB", 0), 0);
+    BOOST_CHECK_EQUAL(GetArg("-YUM", 11), 11);
+    BOOST_CHECK_EQUAL(GetArg("-YUM", 0), 0);
 
-    ResetArgs("-BCB -bar");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", 11), 0);
+    ResetArgs("-YUM -bar");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", 11), 0);
     BOOST_CHECK_EQUAL(GetArg("-bar", 11), 0);
 
-    ResetArgs("-BCB=11 -bar=12");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", 0), 11);
+    ResetArgs("-YUM=11 -bar=12");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", 0), 11);
     BOOST_CHECK_EQUAL(GetArg("-bar", 11), 12);
 
-    ResetArgs("-BCB=NaN -bar=NotANumber");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", 1), 0);
+    ResetArgs("-YUM=NaN -bar=NotANumber");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", 1), 0);
     BOOST_CHECK_EQUAL(GetArg("-bar", 11), 0);
 }
 
 BOOST_AUTO_TEST_CASE(doubledash)
 {
-    ResetArgs("--BCB");
-    BOOST_CHECK_EQUAL(GetBoolArg("-BCB"), true);
+    ResetArgs("--YUM");
+    BOOST_CHECK_EQUAL(GetBoolArg("-YUM"), true);
 
-    ResetArgs("--BCB=verbose --bar=1");
-    BOOST_CHECK_EQUAL(GetArg("-BCB", ""), "verbose");
+    ResetArgs("--YUM=verbose --bar=1");
+    BOOST_CHECK_EQUAL(GetArg("-YUM", ""), "verbose");
     BOOST_CHECK_EQUAL(GetArg("-bar", 0), 1);
 }
 
 BOOST_AUTO_TEST_CASE(boolargno)
 {
     ResetArgs("-noBAR");
-    BOOST_CHECK(!GetBoolArg("-BCB"));
-    BOOST_CHECK(!GetBoolArg("-BCB", true));
-    BOOST_CHECK(!GetBoolArg("-BCB", false));
+    BOOST_CHECK(!GetBoolArg("-YUM"));
+    BOOST_CHECK(!GetBoolArg("-YUM", true));
+    BOOST_CHECK(!GetBoolArg("-YUM", false));
 
     ResetArgs("-noBAR=1");
-    BOOST_CHECK(!GetBoolArg("-BCB"));
-    BOOST_CHECK(!GetBoolArg("-BCB", true));
-    BOOST_CHECK(!GetBoolArg("-BCB", false));
+    BOOST_CHECK(!GetBoolArg("-YUM"));
+    BOOST_CHECK(!GetBoolArg("-YUM", true));
+    BOOST_CHECK(!GetBoolArg("-YUM", false));
 
     ResetArgs("-noBAR=0");
-    BOOST_CHECK(GetBoolArg("-BCB"));
-    BOOST_CHECK(GetBoolArg("-BCB", true));
-    BOOST_CHECK(GetBoolArg("-BCB", false));
+    BOOST_CHECK(GetBoolArg("-YUM"));
+    BOOST_CHECK(GetBoolArg("-YUM", true));
+    BOOST_CHECK(GetBoolArg("-YUM", false));
 
-    ResetArgs("-BCB --noBAR");
-    BOOST_CHECK(GetBoolArg("-BCB"));
+    ResetArgs("-YUM --noBAR");
+    BOOST_CHECK(GetBoolArg("-YUM"));
 
-    ResetArgs("-noBAR -BCB"); // BCB always wins:
-    BOOST_CHECK(GetBoolArg("-BCB"));
+    ResetArgs("-noBAR -YUM"); // YUM always wins:
+    BOOST_CHECK(GetBoolArg("-YUM"));
 }
 
 BOOST_AUTO_TEST_SUITE_END()
