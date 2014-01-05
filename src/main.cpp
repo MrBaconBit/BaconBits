@@ -36,7 +36,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0xf8b5673141d3036c973291ea0435fcfac9f278a1453a82ff1b855d62d06");
+uint256 hashGenesisBlock("0xf8b5673141d3036c973291ea0435fcfac9f278a1453a82ff1b855d62d064f729");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // baconbits: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
