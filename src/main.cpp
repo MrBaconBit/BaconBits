@@ -845,8 +845,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan =  30 * 30; // baconbits: 9mins blocks 
-static const int64 nTargetSpacing = 1 * 30; // baconbits: 30 seconds
+static const int64 nTargetTimespan =  30 * 6 * 60; // baconbits: 3  
+static const int64 nTargetSpacing = 6 * 60; // baconbits: 6 minute 
 
 //
 // minimum amount of work that could possibly be required nTime after
