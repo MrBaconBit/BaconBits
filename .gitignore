@@ -1,7 +1,7 @@
 src/*.exe
-src/digitalcoin
-src/digitalcoind
-src/test_digitalcoin
+src/baconbits
+src/baconbitsd
+src/test_baconbits
 src/build.h
 .*.swp
 *.*~*
@@ -14,7 +14,7 @@ src/build.h
 #compilation and Qt preprocessor part
 *.qm
 Makefile
-digitalcoin-qt
+baconbits-qt
 #resources cpp
 qrc_*.cpp
 #qt creator

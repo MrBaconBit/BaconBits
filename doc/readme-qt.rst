@@ -1,4 +1,4 @@
-digitalcoin: Qt4 GUI for digitalcoin
+baconbits: Qt4 GUI for baconbits
 ================================
 
 Build instructions

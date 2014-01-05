@@ -1,8 +1,8 @@
-digitalcoin 0.1 BETA
+baconbits 0.1 BETA
 
 Copyright (c) 2009-2012 Bitcoin Developers
 Copyright (c) 2011-2012 Litecoin Developers
-Copyright (c) 2011-2012 Digitalcoin Developers
+Copyright (c) 2011-2012 Baconbits Developers
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.
 This product includes software developed by the OpenSSL Project for use in
@@ -38,17 +38,17 @@ bitcointalk thread: https://bitcointalk.org/index.php?topic=209508.0
 
 Setup
 -----
-Unpack the files into a directory and run digitalcoin-qt.exe.
+Unpack the files into a directory and run baconbits-qt.exe.
 
-If you have Microsoft Security Essentials, you need to add digitalcoin-qt.exe to its
+If you have Microsoft Security Essentials, you need to add baconbits-qt.exe to its
 "Excluded processes" list.  Microsoft Security Essentials->Settings tab,
-select Excluded processes, press Add, select digitalcoin-qt.exe, OK, Save changes.
+select Excluded processes, press Add, select baconbits-qt.exe, OK, Save changes.
 
 The software automatically finds other nodes to connect to.  You can
 enable Universal Plug and Play using a menu entry or set your firewall
 to forward port 9333 (TCP) to your computer so you can receive
-incoming connections.  digitalcoin works without incoming connections,
-but allowing incoming connections helps the digitalcoin network thrive.
+incoming connections.  baconbits works without incoming connections,
+but allowing incoming connections helps the baconbits network thrive.
 
 See the bitcoin wiki at:
   https://en.bitcoin.it/wiki/Main_Page

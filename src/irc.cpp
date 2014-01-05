@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2012 Litecoin Developers
-// Copyright (c) 2013 digitalcoin Developers
+// Copyright (c) 2013 baconbits Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -295,14 +295,14 @@ void ThreadIRCSeed2(void* parg)
         }
         
         if (fTestNet) {
-            Send(hSocket, "JOIN #digitalcoinTEST3\r");
-            Send(hSocket, "WHO #digitalcoinTEST3\r");
+            Send(hSocket, "JOIN #baconbitsTEST3\r");
+            Send(hSocket, "WHO #baconbitsTEST3\r");
         } else {
-            // randomly join #digitalcoin00-#digitalcoin99
+            // randomly join #baconbits00-#baconbits99
             int channel_number = GetRandInt(100);
-            channel_number = 0; // digitalcoin: for now, just use one channel
-            Send(hSocket, strprintf("JOIN #digitalcoin%02d\r", channel_number).c_str());
-            Send(hSocket, strprintf("WHO #digitalcoin%02d\r", channel_number).c_str());
+            channel_number = 0; // baconbits: for now, just use one channel
+            Send(hSocket, strprintf("JOIN #baconbits%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("WHO #baconbits%02d\r", channel_number).c_str());
         }
 
         int64 nStart = GetTime();
