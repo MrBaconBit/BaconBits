@@ -10,7 +10,7 @@ Total of 30,000,000 BaconBits
 
 3 Hour Diff Readjustments
 
-30 Coin maturity
+130 Coin maturity
 
 P2P: 58449
 
